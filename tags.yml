@@ -1,0 +1,55 @@
+---
+- name: Using tags
+  hosts: all
+  tasks:
+  - name: Pre_tasks for all environment
+    debug:
+      msg: "Executing Pre_tasks for all environment"
+    tags:
+    - dev
+    - staging
+    - pre_tasks_all_env
+
+  - name: Pre_tasks for dev environment
+    debug:
+      msg: "Executing Pre_tasks for dev environment"
+    tags:
+    - dev
+    - staging
+    - pre_tasks_dev_env
+  - name: Task 1 for dev environment
+    debug:
+      msg: "Executing Task 1 for environment"
+    tags:
+    - dev
+  - name: Task 2 for dev env
+    debug:
+      msg: "Executing Task 2 for environment"
+    tags:
+    - dev
+  - name: Task 1 for staging environment
+    debug:
+      msg: "Executing Task 1 for staging environment"
+    tags:
+    - staging
+  - name: Task 2 for staging  environment
+    debug:
+      msg: "Executing Task 2 for staging environment"
+    tags:
+    - staging
+  - name: Post_tasks for dev environment
+    debug:
+      msg: "Executing Post_tasks for dev environment"
+    tags:
+    - dev
+    - post_tasks_dev_env
+  - name: Post_tasks for all environment
+    debug:
+      msg: "Post_tasks for all environment"
+    tags:
+    - dev
+    - staging
+    - post_tasks_all_env
+...
+~                                                                                                                                                                                                                                                                                                                           
+~                              
